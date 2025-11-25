@@ -1,0 +1,19 @@
+// الحصول على العنصرين من صفحة HTML باستخدام المعرف (ID)
+const heading = document.getElementById('main-heading');
+const button = document.getElementById('color-button');
+
+// دالة لتوليد لون عشوائي بصيغة سداسية عشرية
+function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+// إضافة مُستمع للحدث (Event Listener) للزر
+button.addEventListener('click', function() {
+    // عند الضغط على الزر، قم بتغيير لون العنوان إلى لون عشوائي
+    heading.style.color = getRandomColor();
+});
